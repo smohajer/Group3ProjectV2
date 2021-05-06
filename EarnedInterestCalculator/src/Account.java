@@ -1,6 +1,6 @@
 /*
  * filename: GUI.java
- * Authore: L. Cindy Doan
+ * Authors: L. Cindy Doan and Greg Fury
  * 05/01/2021
  * This application calculates the daily compounded interest earned from a checking or savings account balance.
  * Original source code found at https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html
