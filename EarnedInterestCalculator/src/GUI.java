@@ -76,7 +76,7 @@ public class GUI extends JFrame {
         optionPanel.setLayout(new GridLayout(2, 10, 5, 10));
         optionPanel.setMaximumSize(new Dimension(300, 300));
         //Grouping radio buttons to action events.    
-        ButtonGroup buttonGroup = new ButtonGroup();
+        ButtonGroup buttonGroup = new javax.swing.ButtonGroup();
         buttonGroup.add(checkingButton);
         buttonGroup.add(savingsButton);
         buttonGroup.setSelected(checkingButton.getModel(), true);
@@ -342,7 +342,8 @@ public class GUI extends JFrame {
                     } else if (savingsButton.isSelected()) {                        
                         f.openInterestS();
                         f.ReadInterestS();
-                        textField2.setText(Log.savingsRate);
+                        f.openSavings();
+                        f.ReadSavings();
                         double rate = Double.parseDouble(textField2.getText());
                         double cbal = Double.parseDouble(textBalance.getText());
                         double earnings = cbal * ((rate / 100) / 365);
@@ -354,9 +355,9 @@ public class GUI extends JFrame {
                         double dEarn = Double.valueOf(formatEarnings);
                         savings.updateBalance(dnum);
                         savings.updateRate(dRate);
-                        savings.updateInterest(dEarn);                       
+                        savings.updateInterest(dEarn);                        
                         textBalance.setText(formatBal);
-                        textField.setText(formatEarnings);
+                        textField.setText(formatEarnings); 
                         } //if neither are selected the user is prompted to select an account
                     else {
                         setPane(popupWidth, popupHeight, "Exception", "Please select an account");
